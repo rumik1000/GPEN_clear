@@ -99,12 +99,13 @@ if __name__=='__main__':
 
         img, orig_faces, enhanced_faces = faceenhancer.process(im)
         
-        cv2.imwrite(os.path.join(outdir, '.'.join(filename.split('.')[:-1])+'_COMP.jpg'), np.hstack((im, img)))
+        #cv2.imwrite(os.path.join(outdir, '.'.join(filename.split('.')[:-1])+'_COMP.jpg'), np.hstack((im, img)))
         cv2.imwrite(os.path.join(outdir, '.'.join(filename.split('.')[:-1])+'_GPEN.jpg'), img)
         
-        for m, (ef, of) in enumerate(zip(enhanced_faces, orig_faces)):
-            of = cv2.resize(of, ef.shape[:2])
-            cv2.imwrite(os.path.join(outdir, '.'.join(filename.split('.')[:-1])+'_face%02d'%m+'.jpg'), np.hstack((of, ef)))
+        #for m, (ef, of) in enumerate(zip(enhanced_faces, orig_faces)):
+         #   of = cv2.resize(of, ef.shape[:2])
+         #   cv2.imwrite(os.path.join(outdir, '.'.join(filename.split('.')[:-1])+'_face%02d'%m+'.jpg'), np.hstack((of, ef)))
+          #   cv2.imwrite(os.path.join(outdir, '.'.join(filename.split('.')[:-1])+.jpg'), np.hstack((of, ef)))  
         
         if n%10==0: print(n, filename)
         
